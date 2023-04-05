@@ -17,47 +17,111 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     >
+    <link rel="stylesheet" href="css/_tablet.css">
+    <!-- <link rel="stylesheet" href="css/_desctop.css"> -->
     <link rel="stylesheet" href="css/style.css">
     <title>Webstudio</title>
   </head>
   <body>
+
+    <!--------Шапка------->
     <header class="header">
-      <div class="container">
-        <div class="header-nav">
-          <nav class="header-navigation">
-            <a class="header-logo" href="./index.html"
-              ><span>Web</span>Studio</a
-            >
-            <ul class="header-list list">
-              <li class="header-item">
-                <a class="header-link link active" href="./index.html">Studio</a>
-              </li>
-              <li class="header-item">
-                <a class="header-link link " href="./portfolio.html"
-                  >Portfolio</a
-                >
-              </li>
-              <li class="header-item">
-                <a class="header-link link " href=""> Contacts</a>
-              </li>
+      <div class="container header-inner">
+          <nav class="main-nav header-navigation">
+            <a class="header-logo" href="./index.html"><span>Web</span>Studio</a>
+
+             <ul class="header-list site-nav list">
+              <li class="header-item  tablet"><a class="header-link link active" href="./index.html">Studio</a></li>
+              <li class="header-item  tablet"><a class="header-link link " href="./portfolio.html">Portfolio</a></li>
+              <li class="header-item  tablet" ><a class="header-link link " href=""> Contacts</a></li>
             </ul>
           </nav>
+
           <address class="header-address">
-            <ul class="header-list list">
+            <ul class="header-list cont-nav list">
               <li>
-                <a class="header-mail" href="mailto:info@devstudio.com"
-                  >info@devstudio.com</a
-                >
+                <a class="header-mail" href="mailto:info@devstudio.com">info@devstudio.com</a>
               </li>
               <li>
-                <a class="header-tel" href="tel:+110001111111"
-                  >+11 (000) 111-11-11</a
-                >
+                <a class="header-tel" href="tel:+110001111111">+11 (000) 111-11-11</a>
               </li>
             </ul>
           </address>
-        </div>
+
+          <button 
+            type="button" 
+            class="mobile-menu-btn"
+            aria-expanded="false"
+            data-menu-button>
+                <svg class="mobile-menu-btn__icon" width="55" height="55">
+                    <use href="./images/symbol-defs.svg#burger-icon-menu"></use>
+                </svg>
+                </button>
       </div>
+
+      <div class="mobile-menu" data-menu>
+            <div class="container mobile-menu-container">
+            <button class="header-menu__close-button" data-menu-close>
+                <svg class="mobile-menu__close-svg" >
+                    <use href="./images/symbol-defs.svg#icon-close"></use>
+                </svg>
+            </button>
+            <ul class="mobile-menu-list list">
+                <li>
+                    <a href="./index.html" class="mobile-menu-link current">Studio</a>
+                </li>
+                <li>
+                    <a href="./portfolio.html" class="mobile-menu-link">Portfolio</a>
+                </li>
+                <li>
+                    <a href="" class="mobile-menu-link">Contacts</a>
+                </li>
+            </ul>
+
+            <ul class="mobile-menu-contact list">
+                <li>
+                    <a href="+380961111111" class="mobile-menu-link__tel link" >+38 096 111 11 11</a>
+                </li>
+                <li>
+                    <a href="info@devstudio.com" class="mobile-menu-link__mail link">info@devstudio.com</a>
+                </li>
+            </ul>
+
+            <ul class="mobile-menu_social-link list">
+                  <li class="mobile-menu-item">
+                    <a class="mobile-menu__network" href="#">
+                      <svg class="footer-social-icon" width="24" height="24">
+                        <use href="./images/symbol-defs.svg#icon-instagram" ></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="mobile-menu-item">
+                    <a class="mobile-menu__network" href="#">
+                      <svg class="social-icon" width="24" height="24">
+                        <use href="./images/symbol-defs.svg#icon-twitter" ></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="mobile-menu-item">
+                    <a class="mobile-menu__network" href="#">
+                      <svg class="social-icon" width="24" height="24">
+                        <use href="./images/symbol-defs.svg#icon-facebook" ></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="mobile-menu-item">
+                    <a class="mobile-menu__network" href="#">
+                      <svg class="social-icon" width="24" height="24">
+                        <use href="./images/symbol-defs.svg#icon-linkedin" ></use>
+                      </svg>
+                    </a>
+                  </li>
+            </ul>
+          
+            </div>
+      </div>
+
+
     </header>
     <main>
       <!-- Hero -->
@@ -127,29 +191,61 @@
       </section>
 
       <!-- Tehnologies -->
-      <section class="tehnologies">
+       <section class="tehnologies">
         <div class="container">
           <h2 class="tehnologies-title title">What are we doing</h2>
           <ul class="tehnologies-list list">
             <li class="tehnologies-item">
-              <img src="./images/img1_1-min.jpg" alt="desktop" width="360" >
+              <picture>
+                <source 
+                srcset="./images/img-one.jpg 1x, ./images/img-one@2x.png 2x"
+                media="(min-width: 1200px)">
+                <img src="./images/img1_1-min.jpg" alt="desktop" width="360" >
+              </picture>
+            </li>
+
+            <li class="tehnologies-item">
+              <picture>
+                <source
+                srcset="./images/img-two.png 1x, ./images/img-two@2x.png 2x"
+                media="(min-width: 1200px)">
+                <img src="./images/img1_2-min.jpg" alt="mobile" width="360" >
+              </picture>
             </li>
             <li class="tehnologies-item">
-              <img src="./images/img1_2-min.jpg" alt="mobile" width="360" >
-            </li>
-            <li class="tehnologies-item">
+              <picture>
+                <source
+                srcset="./images/img-three.png 1x, ./images/img-three@2x.png 2x"
+                media="(min-width: 1200px)">
               <img src="./images/img1_3-min.jpg" alt="laptop" width="360" >
+              </picture>
             </li>
           </ul>
         </div>
       </section>
       <!-- Our team -->
-      <section class="team">
-        <div class="container">
+       <section class="team">
+        <div class="container team-container">
           <h2 class="team-title title">Our Team</h2>
           <ul class="team-list list">
             <li class="team-item">
-              <img src="./images/img1-min.jpg" alt="Foto team1" width="264" >
+              <picture>
+                        <source 
+                        srcset="./images/img-desktop.jpg 1x, ./images/img-desktop@2x.jpg 2x"
+                        media="(min-width: 1200px)">
+
+                        <source 
+                        srcset="./images/img-tablet.jpg 1x, ./images/img-tablet@2x.png 2x"
+                        media="(min-width: 768px)"
+                        width="264">
+
+                        <source 
+                        srcset="./images/img-mobile-1.jpg 1x, ./images/img-mobile-1@2x.jpg 2x"
+                        media="(max-width: 767px)"
+                        width="264">
+
+                        <img src="./images/img-desktop.jpg" alt="example" class="section-members__images">
+                    </picture>
               <div class="item-content">
                 <h3 class="subtitle">Mark Guerrero</h3>
                 <p class="team-desc desc">Product Designer</p>
@@ -186,7 +282,23 @@
               </div>
         
             <li class="team-item">
-              <img src="./images/img2-min.jpg" alt="Foto team2" width="264" >
+              <picture>
+                        <source 
+                        srcset="./images/img-desktop2.jpg 1x, ./images/img-desktop2@2x.jpg 2x"
+                        media="(min-width: 1200px)">
+
+                        <source 
+                        srcset="./images/img-tablet2.jpg 1x, ./images/img-tablet2@2x.jpg 2x"
+                        media="(min-width: 768px)"
+                        width="264">
+
+                        <source 
+                        srcset="./images/img-desktop2.jpg 1x, ./images/img-mobile2@2x.jpg 2x"
+                        media="(max-width: 767px)"
+                        width="264">
+
+                        <img src="./images/img-mobile2.jpg" alt="example" class="section-members__images">
+                    </picture>
               <div class="item-content">
                 <h3>Tom Ford</h3>
                 <p class="team-desc desc">Frontend Developer</p>
@@ -223,7 +335,23 @@
               </div>
             </li>
             <li class="team-item">
-              <img src="./images/img3-min.jpg" alt="Foto team3" width="264" >
+              <picture>
+                        <source 
+                        srcset="./images/img-desktop3.jpg 1x, ./images/img-desktop3@2x.jpg 2x"
+                        media="(min-width: 1200px)">
+
+                        <source 
+                        srcset="./images/img-tablet3.jpg 1x, ./images/img-tablet3@2x.jpg 2x"
+                        media="(min-width: 768px)"
+                        width="264">
+
+                        <source 
+                        srcset="./images/img-desktop3.jpg 1x, ./images/img-mobile3@2x.jpg 2x"
+                        media="(max-width: 767px)"
+                        width="264">
+
+                        <img src="./images/img-mobile3.jpg" alt="foto-team3"  width="264">
+                    </picture>
               <div class="item-content">
                 <h3 class="subtitle">Camila Garcia</h3>
                 <p class="team-desc desc">Marketing</p>
@@ -260,7 +388,23 @@
               </div>
             </li>
             <li class="team-item">
-              <img src="./images/img4-min.jpg" alt="Foto team4" width="264">
+              <picture>
+                    <source 
+                    srcset="./images/img-desktop4.jpg 1x, ./images/img-desktop4@2x.jpg 2x"
+                    media="(min-width: 1200px)">
+
+                    <source 
+                    srcset="./images/img-tablet4.jpg 1x, ./images/img-tablet4@2x.jpg 2x"
+                    media="(min-width: 768px)"
+                    width="339">
+
+                    <source 
+                    srcset="./images/img-mobile4.jpg 1x, ./images/img-mobile4@2x.jpg 2x"
+                    media="(max-width: 767px)"
+                    width="290">
+
+                    <img src="./images/img-desktop4.jpg" alt="foto-team4" >
+              </picture>
               <div class="item-content">
                 <h3 class="subtitle">Daniel Wilson</h3>
                 <p class="team-desc desc">UI Designer</p>
@@ -300,8 +444,8 @@
         </div>
       </section>
 
-      <section class="customers">
-        <div class="container">
+       <section class="customers">
+        <div class="container customers-container">
           <h2 class="customers-title title">Customers</h2>
           <ul class="custolers-list list">
             <li class="customers-item">
@@ -351,7 +495,7 @@
       </section>
     </main>
 
-    <footer class="footer">
+     <footer class="footer">
       <div class="container footer-cont">
         <div class="footer-logo-block">
           <a class="footer-logo" href="./index.html"><span>Web</span>Studio</a>
@@ -410,7 +554,7 @@
         </div>  
     </footer>
 
-    <div class="backdrop is-hidden" data-modal>
+     <div class="backdrop is-hidden" data-modal>
       <div class="modal">
         <button type="button" class="modal-close" data-modal-close>
           <svg class="close-icon">
@@ -471,5 +615,6 @@
       </div>
     </div>
     <script src="./js/modal.js"></script>
+    <script src="./js/mobile-menu.js"></script>
   </body>
 </html>
